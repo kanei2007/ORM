@@ -5,8 +5,7 @@
 To develop a Django application to store and retrieve data from a Movies Database using Object Relational Mapping(ORM).
 
 ## ENTITY RELATIONSHIP DIAGRAM
-![image](https://github.com/user-attachments/assets/7017f906-e4e3-44dc-a40e-22b113d5771e)
-
+![Screenshot 2025-05-01 212734](https://github.com/user-attachments/assets/bb9d7efa-2f81-4eb2-b0a1-7508e4e135ad)
 
 
 ## DESIGN STEPS
@@ -23,23 +22,29 @@ Enter the code for admin.py and models.py
 ### STEP 4:
 Execute Django admin and create details for 10 books
 
-## PROGRAM
-'''
-''' admin.py
+## PROGRAM:
+admin.py
 
-from django.contrib import admin from .models import Employee,EmployeeAdmin admin.site.register(Employee,EmployeeAdmin)
+from django.contrib import admin 
+from .models import Movie_DB, Movie_DBAdmin 
+admin.site.register(Movie_DB, Movie_DBAdmin)
 
 models.py
 
-from django.db import models from django.contrib import admin class Employee (models.Model): eid=models.IntegerField(primary_key=True) name=models.CharField(max_length=100) salary=models.IntegerField() age=models.IntegerField() email=models.EmailField()
+from django.db import models 
+from django.contrib import admin 
+class  Movie_DB(models.Model): 
+    Actor = models.CharField(max_length=20, primary_key=True) 
+    User = models.CharField(max_length=100) 
+    Genre = models.CharField(max_length=20) 
+    Tag= models.IntegerField( ) 
+    Writer = models.CharField(max_length=15) 
+    Director = models.DateField( ) 
 
-class EmployeeAdmin(admin.ModelAdmin): list_display=('eid','name','salary','age','email') '''
+class Movie_DBAdmin(admin.ModelAdmin): 
+    list_display = ('Actor', 'User', 'Genre', 'Tag', 'Writer','Director')
+## OUTPUT:
+![image](https://github.com/user-attachments/assets/c537f016-baaf-499b-8c72-68aa8b568d1e)
 
-
-## OUTPUT
-![image](https://github.com/user-attachments/assets/ea09d513-f01d-4b6e-8c4d-b37bc3a3cfbb)
-
-
-
-## RESULT
+## RESULT:
 Thus the program for creating movies database using ORM hass been executed successfully
